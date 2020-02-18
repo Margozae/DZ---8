@@ -6,14 +6,14 @@ function Student(name, surname, birthYear) {
     this.rating.length = 30;
     this.attendance = [];
     this.attendance.length = 30;
-    const undef = 'undefined';
+    const undef = undefined;   // eslint-disable-line
     const limitlength = 30;
     this.age = function() {
         return (new Date).getFullYear() - birthYear;
     };
-    this.average = function(){
+    this.average = function() {
         const filterValue = this.rating.filter(value => value !== undef);
-        const sumValue = filterValue.reduce((firstValue, currentValue) => firstValue += currentValue);
+        const sumValue = filterValue.reduce((firstValue, currentValue) => firstValue += currentValue);   // eslint-disable-line
         return sumValue / filterValue.length;
     };
     this.present = function() {
@@ -45,7 +45,7 @@ function Student(name, surname, birthYear) {
     };
     this.avGattendance = function(){
         const filterValue = this.attendance.filter(value => value !== undef);
-        const sumValue = filterValue.reduce((firstValue, currentValue) => firstValue += currentValue);
+        const sumValue = filterValue.reduce((firstValue, currentValue) => firstValue += currentValue);  // eslint-disable-line
         return sumValue / filterValue.length;
     };
     this.summary = function() {
@@ -60,47 +60,24 @@ function Student(name, surname, birthYear) {
         }
     };
 }
-
 const olga = new Student('Olga', 'Werdana', 1990);  // eslint-disable-line 
 const wanda = new Student('Wanda', 'Milson', 1995);  // eslint-disable-line 
 const alan = new Student('Alan', 'Dolphig', 1998);   // eslint-disable-line 
-
-
 const a = 10;
-const b = 8;
-const c = 6;
 const d = 2;
 olga.absent();
 olga.present();
 olga.mark(a);
-olga.mark(b);
+olga.mark(d);
 olga.mark(a);
-olga.mark(b);
-olga.mark(a);
-olga.mark(b);
-olga.mark(a);
-olga.mark(b);
-olga.mark(a);
-olga.mark(b);
-olga.mark(a);
-olga.mark(b);
-olga.mark(a);
-olga.mark(b);
-olga.mark(a);
-olga.mark(b);
-olga.mark(a);
-olga.mark(b);
-olga.mark(a);
-olga.mark(b);
-olga.mark(a);
-olga.mark(b);
-olga.mark(a);
-olga.mark(b);
-wanda.mark(c);
-wanda.present();
 alan.absent();
+alan.mark(a);
+wanda.mark(a);
 alan.mark(d);
+wanda.mark(a);
+olga.present();
+wanda.present();
 
-// console.log(olga.summary());
-console.log(olga.average());
+
+
 
